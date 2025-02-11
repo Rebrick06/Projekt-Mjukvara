@@ -4,12 +4,20 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:KattApp"
-    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutBehavior="Disabled"
     Title="KattApp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="Cat Fact"
+            ContentTemplate="{DataTemplate local:CatFactPage}"
+            Icon="{OnPlatform 'cat_fact.png'}"/>
+        
+        <ShellContent
+            Title="My Cats"
+            ContentTemplate="{DataTemplate local:MyCatPage}"
+            Icon="{OnPlatform 'my_cats.png'}" />
+    </TabBar>
 
+   
 </Shell>
