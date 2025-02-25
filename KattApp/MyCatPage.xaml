@@ -12,7 +12,7 @@
             BorderWidth="1"
             BorderColor="Black"
             Margin="30"
-            Nav />
+            Clicked="OnNavigateButtonClicked"/>
 
        
         
