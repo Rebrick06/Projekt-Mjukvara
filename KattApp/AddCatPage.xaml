@@ -2,15 +2,36 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KattApp.AddCatPage"
-             Title="AddCatPage">
-    <VerticalStackLayout Margin="15" Padding="30,60,30,30">
+             Title="Add Cat">
+    <VerticalStackLayout Margin="15" Padding="30,10,30,30">
         <Label Text="Cat Name" TextColor="Gray"/>
         <Entry />
-        <Label Text="Cat Race" TextColor="Gray"/>
+        <Label Text="Cat Race" TextColor="Gray" Padding="0,20,0,0"/>
         <Entry />
-        <Label Text="Birthday" TextColor="Grey"/>
-        
-        <Label Text="Food type"
+        <Label Text="Birthday" TextColor="Grey" Padding="0,20,0,0"/>
+        <Entry />
+        <HorizontalStackLayout>
+            <Label Text="Food type" TextColor="Gray" Padding="0,20,0,0"/>
+            <Label Text="Amount" TextColor="Gray" Padding="120,20,0,0"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Entry/>
+            <Entry/>
+        </HorizontalStackLayout>
+        <Label Text="Weight" TextColor="Gray" Padding="0,20,0,0"/>
+        <Entry/>
+        <Label Text="Add image" TextColor="Gray" Padding="0,20,0,0"/>
+        <Label Text="Coment" TextColor="Gray" Padding="0,20,0,0"/>
+        <Entry/>
+        <Button 
+            x:Name="catadded" 
+            BackgroundColor="White"
+            Text="Save Cat"
+            TextColor="Black"
+            BorderWidth="1"
+            BorderColor="Black"
+            Margin="30"
+            Clicked="AddButton_Clicked"/>
 
     </VerticalStackLayout>
 </ContentPage>
