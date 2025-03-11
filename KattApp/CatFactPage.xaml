@@ -2,11 +2,34 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KattApp.CatFactPage"
-             Title="Todays Cat Fact">
+             Title="">
     <VerticalStackLayout>
-        <Label 
-            Text="Skriv todays cat fact här"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
+        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1" Stroke="Black" Margin="20,50,20,0">
+
+            <Label
+            Margin="0,0,0,0"
+            x:Name="TitleLabel"
+            Text="Todays Cat Fact"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            FontSize="20"
+            FontAttributes="Bold"
+            Padding="20"            />
+        </Border>
+        <Grid HorizontalOptions="Fill">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Label
+             Margin="0,50,0,0"                
+             x:Name="CatFactLabel"
+             Text="TOMT? (KATTFAKTA)"
+             TextColor="Gray"
+             VerticalOptions="Center" 
+             HorizontalOptions="Center"
+             Grid.Column="1"/>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
