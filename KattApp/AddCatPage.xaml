@@ -2,8 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KattApp.AddCatPage"
-             Title="Add Cat">
+             Title="">
     <VerticalStackLayout Margin="15" Padding="30,10,30,30">
+        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="20,-25,20,25">
+
+            <Label
+                Margin="0,0,0,0"
+                x:Name="TitleLabelAddCat"
+                Text="Add Cat"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                FontSize="20"
+                FontAttributes="Bold"
+                Padding="20"/>
+        </Border>
+
         <Label Text="Cat Name" TextColor="Gray"/>
         <Entry />
         <Label Text="Cat Race" TextColor="Gray" Padding="0,20,0,0"/>

@@ -4,11 +4,11 @@
              x:Class="KattApp.CatFactPage"
              Title="">
     <VerticalStackLayout>
-        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1" Stroke="Black" Margin="20,50,20,0">
+        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="20,50,20,0">
 
             <Label
             Margin="0,0,0,0"
-            x:Name="TitleLabel"
+            x:Name="TitleLabelCatFact"
             Text="Todays Cat Fact"
             HorizontalOptions="Center"
             VerticalOptions="Start"
@@ -26,7 +26,8 @@
              Margin="0,50,0,0"                
              x:Name="CatFactLabel"
              Text="TOMT? (KATTFAKTA)"
-             TextColor="Gray"
+             TextColor="DarkSlateGray"
+             FontSize="17"
              VerticalOptions="Center" 
              HorizontalOptions="Center"
              Grid.Column="1"/>
