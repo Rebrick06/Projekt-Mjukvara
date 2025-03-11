@@ -8,9 +8,10 @@ public partial class AddCatPage : ContentPage
 	}
     private async void AddButton_Clicked(object sender, EventArgs e)
     {
-        //går tilbacka till my cats
+
+        //gÃ¥r tilbacka till my cats
         await Navigation.PopAsync();
         
-    }
 
+    }
 }
