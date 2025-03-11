@@ -14,10 +14,5 @@
             Margin="30"
             Clicked="OnNavigateButtonClicked"/>
 
-       
-        
     </VerticalStackLayout>
-
-    
-    
 </ContentPage>
