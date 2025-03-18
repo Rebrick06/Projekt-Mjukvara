@@ -4,7 +4,7 @@
              x:Class="KattApp.AddCatPage"
              Title="">
     <VerticalStackLayout Margin="15" Padding="30,10,30,30">
-        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="20,-25,20,25">
+        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="60,-25,60,25">
 
             <Label
                 Margin="0,0,0,0"
@@ -27,7 +27,7 @@
         <Entry />
         
         <HorizontalStackLayout>
-            <Label Text="Food type" TextColor="Gray" Padding="0,20,0,0"/>
+            <Label Text="Food type" TextColor="Gray" Padding="0,20,0,-150"/>
             <Label Text="Amount" TextColor="Gray" Padding="120,20,0,0"/>
         </HorizontalStackLayout>
         <HorizontalStackLayout>
@@ -51,7 +51,7 @@
                 x:Name="removeAmountOfFood" 
                 BackgroundColor="White"
                 Text="-"
-                FontSize="37"
+                FontSize="40"
                 TextColor="Black"
                 Margin="0,0,5,0"
                 Clicked="OnRemoveFood"/>

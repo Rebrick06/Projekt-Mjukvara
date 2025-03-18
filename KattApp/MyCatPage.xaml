@@ -5,7 +5,7 @@
              Title="">
     
     <VerticalStackLayout>
-        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="20,50,20,0">
+        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray"  Margin="60,50,60,0">
 
             <Label
                 Margin="0,0,0,0"
@@ -28,4 +28,4 @@
             Clicked="OnNavigateButtonClicked"/>
 
     </VerticalStackLayout>
-</ContentPage>
+</ContentPage> 
