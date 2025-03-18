@@ -37,7 +37,7 @@
                 x:Name="addAmountOfFood" 
                 BackgroundColor="White"
                 Text="+"
-                FontSize="20"
+                FontSize="33"
                 TextColor="Black"
                 Margin="5,0,5,0"
                 Clicked="OnAddFood"/>
@@ -51,7 +51,7 @@
                 x:Name="removeAmountOfFood" 
                 BackgroundColor="White"
                 Text="-"
-                FontSize="32"
+                FontSize="37"
                 TextColor="Black"
                 Margin="0,0,5,0"
                 Clicked="OnRemoveFood"/>
