@@ -61,7 +61,15 @@
         <Entry/>
         
         <Label Text="Add image" TextColor="Gray" Padding="0,20,0,0"/>
-        
+        <Image
+             x:Name="Image_Upload"
+            HeightRequest="100"/>
+
+        <Button
+            Text="Uplode Image"
+            Clicked="UploadImage_Clicked"/>
+
+
         <Label Text="Coment" TextColor="Gray" Padding="0,20,0,0"/>
         <Entry/>
         
@@ -75,5 +83,6 @@
             Margin="30"
             Clicked="AddButton_Clicked"/>
 
+        
     </VerticalStackLayout>
 </ContentPage>
