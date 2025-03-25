@@ -27,7 +27,7 @@
         <Entry />
         
         <HorizontalStackLayout>
-            <Label Text="Food type" TextColor="Gray" Padding="0,20,0,-150"/>
+            <Label Text="Food type" TextColor="Gray" Padding="0,20,0,0"/>
             <Label Text="Amount" TextColor="Gray" Padding="120,20,0,0"/>
         </HorizontalStackLayout>
         <HorizontalStackLayout>

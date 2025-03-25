@@ -57,9 +57,9 @@ namespace KattApp
             }
             catch (Exception ex)
             {
-                return "API NOT AVAILKABLE";
+                return "API Not Available";
             }
-            return "ERROR";
+            return "Error";
         }
     }
 }
