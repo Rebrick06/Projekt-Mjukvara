@@ -51,6 +51,7 @@ namespace KattApp
                     return fact?.Fact ?? "No fact available";
                 }
             }
+            
             catch (Exception ex)
             {
                 return "API Not Available";
