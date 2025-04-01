@@ -68,7 +68,12 @@
 
             <Button
                 Text="Uplode Image"
+                BackgroundColor="White"
                 Clicked="UploadImage_Clicked"
+                TextColor="Black"
+                BorderWidth="1"
+                BorderColor="Black"
+                Margin="30"
             />
             <Label Text="Coment" TextColor="Gray" Padding="0,20,0,0"/>
             <Entry/>
