@@ -3,86 +3,85 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KattApp.AddCatPage"
              Title="">
-    <VerticalStackLayout Margin="15" Padding="30,10,30,30">
-        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="60,-25,60,25">
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <VerticalStackLayout Margin="15" Padding="30,10,30,30">
+            <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="60,-25,60,25">
 
-            <Label
-                Margin="0,0,0,0"
-                x:Name="TitleLabelAddCat"
-                Text="Add Cat"
-                HorizontalOptions="Center"
-                VerticalOptions="Start"
-                FontSize="20"
-                FontAttributes="Bold"
-                Padding="20"/>
-        </Border>
+                <Label
+                    Margin="0,0,0,0"
+                    x:Name="TitleLabelAddCat"
+                    Text="Add Cat"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    Padding="20"/>
+            </Border>
 
-        <Label Text="Cat Name" TextColor="Gray"/>
-        <Entry />
-        
-        <Label Text="Cat Race" TextColor="Gray" Padding="0,20,0,0"/>
-        <Entry />
-        
-        <Label Text="Birthday" TextColor="Grey" Padding="0,20,0,0"/>
-        <Entry />
-        
-        <HorizontalStackLayout>
-            <Label Text="Food type" TextColor="Gray" Padding="0,20,0,0"/>
-            <Label Text="Amount" TextColor="Gray" Padding="120,20,0,0"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout>
-            <Entry MinimumWidthRequest="160"/>
+            <Label Text="Cat Name" TextColor="Gray"/>
+            <Entry />
+
+            <Label Text="Cat Race" TextColor="Gray" Padding="0,20,0,0"/>
+            <Entry />
+
+            <Label Text="Birthday" TextColor="Grey" Padding="0,20,0,0"/>
+            <Entry />
+
+            <HorizontalStackLayout>
+                <Label Text="Food type" TextColor="Gray" Padding="0,20,0,0"/>
+                <Label Text="Amount" TextColor="Gray" Padding="120,20,0,0"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Entry MinimumWidthRequest="160"/>
+
+                <Button 
+                    x:Name="addAmountOfFood" 
+                    BackgroundColor="White"
+                    Text="+"
+                    FontSize="33"
+                    TextColor="Black"
+                    Margin="5,0,5,0"
+                    Clicked="OnAddFood"/>   
+                <Label 
+                    x:Name="AmountFood"
+                    HorizontalOptions="Center"
+                    Margin="0,25,0,0"
+                    Text="amount"
+                    />
+                <Button 
+                    x:Name="removeAmountOfFood" 
+                    BackgroundColor="White"
+                    Text="-"
+                    FontSize="40"
+                    TextColor="Black"
+                    Margin="0,0,5,0"
+                    Clicked="OnRemoveFood"/>    
+            </HorizontalStackLayout>
+
+            <Label Text="Weight" TextColor="Gray" Padding="0,20,0,0"/>
+            <Entry/>
+
+            <Label Text="Add image" TextColor="Gray" Padding="0,20,0,0"/>
+            <Image
+                x:Name="Image_Upload"
+                HeightRequest="100"/>
+
+            <Button
+                Text="Uplode Image"
+                Clicked="UploadImage_Clicked"
+            />
+            <Label Text="Coment" TextColor="Gray" Padding="0,20,0,0"/>
+            <Entry/>
 
             <Button 
-                x:Name="addAmountOfFood" 
+                x:Name="catadded" 
                 BackgroundColor="White"
-                Text="+"
-                FontSize="33"
+                Text="Save Cat"
                 TextColor="Black"
-                Margin="5,0,5,0"
-                Clicked="OnAddFood"/>
-            <Label 
-                x:Name="AmountFood"
-                HorizontalOptions="Center"
-                Margin="0,25,0,0"
-                Text="amount"
-                />
-            <Button 
-                x:Name="removeAmountOfFood" 
-                BackgroundColor="White"
-                Text="-"
-                FontSize="40"
-                TextColor="Black"
-                Margin="0,0,5,0"
-                Clicked="OnRemoveFood"/>
-        </HorizontalStackLayout>
-        
-        <Label Text="Weight" TextColor="Gray" Padding="0,20,0,0"/>
-        <Entry/>
-        
-        <Label Text="Add image" TextColor="Gray" Padding="0,20,0,0"/>
-        <Image
-             x:Name="Image_Upload"
-            HeightRequest="100"/>
-
-        <Button
-            Text="Uplode Image"
-            Clicked="UploadImage_Clicked"/>
-
-
-        <Label Text="Coment" TextColor="Gray" Padding="0,20,0,0"/>
-        <Entry/>
-        
-        <Button 
-            x:Name="catadded" 
-            BackgroundColor="White"
-            Text="Save Cat"
-            TextColor="Black"
-            BorderWidth="1"
-            BorderColor="Black"
-            Margin="30"
-            Clicked="AddButton_Clicked"/>
-
-        
-    </VerticalStackLayout>
+                BorderWidth="1"
+                BorderColor="Black"
+                Margin="30"
+                Clicked="AddButton_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
