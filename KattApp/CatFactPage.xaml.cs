@@ -17,8 +17,8 @@ namespace KattApp
 
         public class CatFact
         {
-            [JsonProperty("text")]
-            public string Text { get; set; }
+            [JsonProperty("fact")]
+            public string Fact{ get; set; }
         }
         public CatFactPage()
         {
@@ -33,28 +33,25 @@ namespace KattApp
 
         private async Task<string> GetCatFact()
         {
-            string url = "https://cat-fact.herokuapp.com/facts";
+            string url = "https://catfact.ninja/fact";
             try
             {
                 using (HttpClient client = new HttpClient())
                 {
                     HttpResponseMessage resp = await client.GetAsync(url);
 
-                    string jsonString = await resp.Content.ReadAsStringAsync();
-
-                    List<CatFact> facts = JsonConvert.DeserializeObject<List<CatFact>>(jsonString);
-                                       
-                    if (facts.Count > 0)
+                    if (!resp.IsSuccessStatusCode)
                     {
-                        //dagensdatum
-                        DateTime today = DateTime.Today;
-                        int day = today.DayOfYear;
-
-                        //dagens fakta
-                        return facts[day % facts.Count].Text;
+                        return "API Not Available";
                     }
+
+                    string jsonString = await resp.Content.ReadAsStringAsync();
+                    CatFact fact = JsonConvert.DeserializeObject<CatFact>(jsonString);
+
+                    return fact?.Fact ?? "No fact available";
                 }
             }
+            
             catch (Exception ex)
             {
                 return "API Not Available";
