@@ -1,9 +1,12 @@
 namespace KattApp;
 using System.Data.SQLite;
+using KattApp.Mdoels;
 
 public partial class AddCatPage : ContentPage
 {
-    
+
+    int count = 0;
+
 	public AddCatPage()
 	{
 		InitializeComponent();
@@ -12,23 +15,35 @@ public partial class AddCatPage : ContentPage
 
     private async void AddButton_Clicked(object sender, EventArgs e)
     {
-        string Name = NameEntry.Text;
-        string Race = RaceEntry.Text;
-        string birthDay = bDayEntry.Text;
-        string foodType = fTypeEntry.Text;
-        int foodAmount = int.TryParse(fAmountEntry.Text, out int Fa) ? Fa : 0;
-        double weight = double.TryParse(WeightEntry.Text, out double W) ? W : 0.0;
-        string comment = CommentEntry.Text;
-        if(App._db.AddCat(new App.Cat(Name, Race, birthDay, foodType, foodAmount, weight, comment)))
-        {
-            await DisplayAlert("SUCCESS", Name + " has been successfully added\n"+Name+ " " + Race+ " " +birthDay+ " " + foodType + " " + foodAmount + " " + weight + " " + comment, "OK");
-        }
-        else
-        {
-            await DisplayAlert("UH OH!", "Something went wrong\n " + Name + " " + Race + " " + birthDay + " " + foodType + " " + foodAmount + " " + weight + " " + comment, "OK");
-        }
+        var cat = new Cat
+ {
+     Name = NameEntry.Text,
+     Race = RaceEntry.Text,
+     Birthday = bDayEntry.Text,
+     Food_type = fTypeEntry.Text,
+     //Food_amount = int.Parse(fAmountEntry.Text),
+     Weight = double.Parse(WeightEntry.Text),
+     Comment = CommentEntry.Text
+ };
 
-        await Navigation.PopAsync();
+ await App.Database.SaveCatAsync(cat);
+ await DisplayAlert("Sparad", "Katten har sparats!", "OK");
+
+ await Navigation.PopAsync();
+    }
+
+    private void OnAddFood(object sender, EventArgs e)
+    {
+        count++;
+        if (count <= 0) { count = 0; }
+        AmountFood.Text = $"{count.ToString()}    g";
+    }
+
+    private void OnRemoveFood(object sender, EventArgs e)
+    {
+        count--;
+        if (count <= 0) { count = 0; }
+        AmountFood.Text = $"{count.ToString()}    g";
     }
     
 }

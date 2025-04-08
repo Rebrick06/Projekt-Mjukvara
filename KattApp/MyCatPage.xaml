@@ -4,9 +4,22 @@
              x:Class="KattApp.MyCatPage"
              Title="My Cats">
     <VerticalStackLayout>
-        <VerticalStackLayout x:Name="CatContainer" Padding="10">
             
-        </VerticalStackLayout>
+        <CollectionView x:Name="catsCollectionView">
+                <DataTemplate>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Race}" />
+                            <Label Text="{Binding Weight, StringFormat='Vikt: {0} kg'}" />
+                            <Label Text="{Binding Birthday, StringFormat='Född: {0:yyyy-MM-dd}'}" />
+                            <Label Text="{Binding FoodType, StringFormat='Foder: {0}'}"/>
+                            <Label Text="{Binding FoodAmount, StringFormat='Fodermängd: {0} g'}"/>
+                            <Label Text="{Binding Comment, StringFormat='Kommentar: {0}'}"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         <Button 
             x:Name="addcat" 
             BackgroundColor="White"

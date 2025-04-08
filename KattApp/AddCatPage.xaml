@@ -4,26 +4,71 @@
              x:Class="KattApp.AddCatPage"
              Title="Add Cat">
     <VerticalStackLayout Margin="15" Padding="30,10,30,30">
+        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="20,-25,20,25">
+
+            <Label
+                Margin="0,0,0,0"
+                x:Name="TitleLabelAddCat"
+                Text="Add Cat"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                FontSize="20"
+                FontAttributes="Bold"
+                Padding="20"/>
+        </Border>
+
         <Label Text="Cat Name" TextColor="Gray"/>
+
         <Entry x:Name="NameEntry" />
         <Label Text="Cat Race" TextColor="Gray" Padding="0,20,0,0"/>
         <Entry x:Name="RaceEntry"/>
         <Label Text="Birthday" TextColor="Grey" Padding="0,20,0,0"/>
         <Entry x:Name="bDayEntry"/>
+
         <HorizontalStackLayout>
             <Label Text="Food type" TextColor="Gray" Padding="0,20,0,0"/>
             <Label Text="Amount (g)" TextColor="Gray" Padding="120,20,0,0"/>
         </HorizontalStackLayout>
         <HorizontalStackLayout>
-            <Entry x:Name="fTypeEntry"/>
-            <Entry x:Name="fAmountEntry" Keyboard="Numeric"/>
+
+            <Entry x:Name="fTypeEntry" MinimumWidthRequest="160"/>
+
+                        <Button 
+                x:Name="addAmountOfFood" 
+                BackgroundColor="White"
+                Text="+"
+                FontSize="33"
+                TextColor="Black"
+                Margin="5,0,5,0"
+                Clicked="OnAddFood"/>
+            <Label 
+                x:Name="AmountFood"
+                HorizontalOptions="Center"
+                Margin="0,25,0,0"
+                Text="amount"
+                />
+            <Button 
+                x:Name="removeAmountOfFood" 
+                BackgroundColor="White"
+                Text="-"
+                FontSize="37"
+                TextColor="Black"
+                Margin="0,0,5,0"
+                Clicked="OnRemoveFood"/>
+
         </HorizontalStackLayout>
         <Label Text="Weight (kg)" TextColor="Gray" Padding="0,20,0,0"/>
         <Entry x:Name="WeightEntry" Keyboard="Numeric"/>
         <Label Text="Add image" TextColor="Gray" Padding="0,20,0,0"/>
         <Label Text="Comment" TextColor="Gray" Padding="0,20,0,0"/>
         <Entry x:Name="CommentEntry"/>
-        <Button 
+
+           
+
+
+        </HorizontalStackLayout>
+        
+                <Button 
             x:Name="catadded" 
             BackgroundColor="White"
             Text="Save Cat"

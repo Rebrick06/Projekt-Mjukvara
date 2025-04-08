@@ -13,6 +13,7 @@ namespace KattApp
         public class ContentHandler
         {
             CatFact catFact;
+            CatFact catFact;  
         }
 
         public class CatFact
