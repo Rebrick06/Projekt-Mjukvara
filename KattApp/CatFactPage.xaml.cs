@@ -33,14 +33,14 @@ namespace KattApp
 
         private async Task<string> GetCatFact()
         {
-            string url = "https://catfact.ninja/fact";
+            string url = "https://catfact.ninja/fact"; //api anrop
             try
             {
                 using (HttpClient client = new HttpClient())
                 {
                     HttpResponseMessage resp = await client.GetAsync(url);
 
-                    if (!resp.IsSuccessStatusCode)
+                    if (!resp.IsSuccessStatusCode)//hittar inte api
                     {
                         return "API Not Available";
                     }
@@ -52,11 +52,10 @@ namespace KattApp
                 }
             }
             
-            catch (Exception ex)
+            catch (Exception ex) //något blir fel. 
             {
-                return "API Not Available";
+                return "API Not Available"; 
             }
-            return "Error";
         }
     }
 }
