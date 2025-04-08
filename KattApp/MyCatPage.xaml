@@ -4,6 +4,19 @@
              x:Class="KattApp.MyCatPage"
              Title="My Cats">
     <VerticalStackLayout>
+      
+              <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="60,50,60,0" >
+            <Label
+                Margin="0,0,0,0"
+                x:Name="TitleLabelMyCat"
+                Text="My Cats"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                FontSize="20"
+                FontAttributes="Bold"
+                Padding="20"/>
+        </Border>
+      
         <CollectionView x:Name="catsCollectionView">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -21,6 +34,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
         <Button 
             x:Name="addcat" 
             BackgroundColor="White"
@@ -31,7 +45,4 @@
             Margin="30"
             Clicked="OnNavigateButtonClicked"/>
     </VerticalStackLayout>
-
-    
-    
 </ContentPage>

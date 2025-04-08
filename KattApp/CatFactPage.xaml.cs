@@ -2,7 +2,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
-using Newtonsoft.Json; // L�gg till Newtonsoft.Json via NuGet
+using Newtonsoft.Json; // Lägg till Newtonsoft.Json via NuGet
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -17,8 +17,8 @@ namespace KattApp
 
         public class CatFact
         {
-            [JsonProperty("text")]
-            public string Text { get; set; }
+            [JsonProperty("fact")]
+            public string Fact{ get; set; }
         }
         public CatFactPage()
         {
@@ -33,34 +33,30 @@ namespace KattApp
 
         private async Task<string> GetCatFact()
         {
+
+            string url = "https://catfact.ninja/fact"; //api anrop
             try
             {
-                string url = "https://cat-fact.herokuapp.com/facts";
-
                 using (HttpClient client = new HttpClient())
                 {
                     HttpResponseMessage resp = await client.GetAsync(url);
 
-                    string jsonString = await resp.Content.ReadAsStringAsync();
-
-                    List<CatFact> facts = JsonConvert.DeserializeObject<List<CatFact>>(jsonString);
-
-                    if (facts.Count > 0)
+                    if (!resp.IsSuccessStatusCode)//hittar inte api
                     {
-                        DateTime today = DateTime.Today;
-                        int day = today.DayOfYear;
-
-                        return facts[day % facts.Count].Text;
+                        return "API Not Available";
                     }
+
+                    string jsonString = await resp.Content.ReadAsStringAsync();
+                    CatFact fact = JsonConvert.DeserializeObject<CatFact>(jsonString);
+
+                    return fact?.Fact ?? "No fact available";
                 }
             }
-            catch
-            {
-                CatFactLabel.Text = "ERROR";
-            }
-            return "ERROR";
             
-         
+            catch (Exception ex) //något blir fel. 
+            {
+                return "API Not Available"; 
+            }
         }
     }
 }

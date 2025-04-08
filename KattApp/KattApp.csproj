@@ -60,6 +60,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="NewFolder1\**" />
+	  <Compile Remove="NewFolder1\**" />
+	  <EmbeddedResource Remove="NewFolder1\**" />
+	  <MauiCss Remove="NewFolder1\**" />
+	  <MauiXaml Remove="NewFolder1\**" />
+	  <None Remove="NewFolder1\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -79,6 +88,10 @@
 	  <MauiXaml Update="NewPage1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Views\" />
 	</ItemGroup>
 
 </Project>

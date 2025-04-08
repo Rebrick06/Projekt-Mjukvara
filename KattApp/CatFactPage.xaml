@@ -4,17 +4,19 @@
              x:Class="KattApp.CatFactPage"
              Title="">
     <VerticalStackLayout>
-        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="20,50,20,0">
+        <!--runt title-->
+        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="60,50,60,0">
 
+            <!--title-->
             <Label
             Margin="0,0,0,0"
             x:Name="TitleLabelCatFact"
-            Text="Todays Cat Fact"
+            Text="Random Cat Fact"  
             HorizontalOptions="Center"
             VerticalOptions="Start"
             FontSize="20"
             FontAttributes="Bold"
-            Padding="20"            />
+            Padding="20"            /> 
         </Border>
         <Grid HorizontalOptions="Fill">
             <Grid.ColumnDefinitions>
@@ -22,6 +24,7 @@
                 <ColumnDefinition Width="0.8*"/>
                 <ColumnDefinition Width="0.1*"/>
             </Grid.ColumnDefinitions>
+            <!--Random fakta-->
             <Label
              Margin="0,50,0,0"                
              x:Name="CatFactLabel"
@@ -30,7 +33,7 @@
              FontSize="17"
              VerticalOptions="Center" 
              HorizontalOptions="Center"
-             Grid.Column="1"/>
+             Grid.Column="1"/> 
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
