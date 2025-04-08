@@ -1,10 +1,13 @@
 using KattApp.Services;
 
 namespace KattApp;
+using System.Data.SQLite;
+using KattApp.Mdoels;
 
 
 public partial class AddCatPage : ContentPage
 {
+
     UpploadImage uploadImage {  get; set; }
 
     int count = 0;
@@ -14,6 +17,8 @@ public partial class AddCatPage : ContentPage
 		InitializeComponent();
         uploadImage = new UpploadImage();
 	}
+
+
 
     /// <summary>
     /// knapp för att lägga till mer mat 
@@ -53,11 +58,25 @@ public partial class AddCatPage : ContentPage
            uploadImage.ByteArrayToStream(uploadImage.StringToByteBase64(imagefile.byteBase46)
             ));
     }
-
+    
+    
     private async void AddButton_Clicked(object sender, EventArgs e)
     {
+        var cat = new Cat
+ {
+     Name = NameEntry.Text,
+     Race = RaceEntry.Text,
+     Birthday = bDayEntry.Text,
+     Food_type = fTypeEntry.Text,
+     //Food_amount = count,
+     Weight = double.Parse(WeightEntry.Text),
+     Comment = CommentEntry.Text
+ };
 
-        //går tilbacka till my cats
-        await Navigation.PopAsync();
+ await App.Database.SaveCatAsync(cat);
+ await DisplayAlert("Sparad", "Katten har sparats!", "OK");
+
+ await Navigation.PopAsync();
     }
+
 }

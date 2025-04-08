@@ -2,12 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KattApp.MyCatPage"
-             Title="">
-    
+             Title="My Cats">
     <VerticalStackLayout>
-
-        <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="60,50,60,0" >
-
+      
+              <Border StrokeShape="RoundRectangle 20" StrokeThickness="1"  Background="LightGray" Margin="60,50,60,0" >
             <Label
                 Margin="0,0,0,0"
                 x:Name="TitleLabelMyCat"
@@ -18,6 +16,25 @@
                 FontAttributes="Bold"
                 Padding="20"/>
         </Border>
+      
+        <CollectionView x:Name="catsCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="18"/>
+                            <Label Text="{Binding Race}" />
+                            <Label Text="{Binding Weight, StringFormat='Vikt: {0} kg'}" />
+                            <Label Text="{Binding Birthday, StringFormat='Född: {0:yyyy-MM-dd}'}" />
+                            <Label Text="{Binding FoodType, StringFormat='Foder: {0}'}"/>
+                            <Label Text="{Binding FoodAmount, StringFormat='Fodermängd: {0} g'}"/>
+                            <Label Text="{Binding Comment, StringFormat='Kommentar: {0}'}"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
         <Button 
             x:Name="addcat" 
             BackgroundColor="White"
@@ -27,6 +44,5 @@
             BorderColor="Black"
             Margin="30"
             Clicked="OnNavigateButtonClicked"/>
-
     </VerticalStackLayout>
-</ContentPage> 
+</ContentPage>

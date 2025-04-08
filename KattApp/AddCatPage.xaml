@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KattApp.AddCatPage"
-             Title="">
+
+             Title="Add Cat">
+   
+
     <ScrollView VerticalScrollBarVisibility="Always">
         <VerticalStackLayout Margin="15" Padding="30,10,30,30">
             <!--box runt title-->
@@ -19,21 +22,24 @@
                     Padding="20"/>
             </Border>
             <!--formulär-->
-            <Label Text="Cat Name" TextColor="Gray"/>
-            <Entry />
+           
 
-            <Label Text="Cat Race" TextColor="Gray" Padding="0,20,0,0"/>
-            <Entry />
+        <Label Text="Cat Name" TextColor="Gray"/>
 
-            <Label Text="Birthday" TextColor="Grey" Padding="0,20,0,0"/>
-            <Entry />
+        <Entry x:Name="NameEntry" />
+        <Label Text="Cat Race" TextColor="Gray" Padding="0,20,0,0"/>
+        <Entry x:Name="RaceEntry"/>
+        <Label Text="Birthday" TextColor="Grey" Padding="0,20,0,0"/>
+        <Entry x:Name="bDayEntry"/>
 
-            <HorizontalStackLayout>
-                <Label Text="Food type" TextColor="Gray" Padding="0,20,0,0"/>
-                <Label Text="Amount" TextColor="Gray" Padding="120,20,0,0"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout>
-                <Entry MinimumWidthRequest="160"/>
+        <HorizontalStackLayout>
+            <Label Text="Food type" TextColor="Gray" Padding="0,20,0,0"/>
+            <Label Text="Amount (g)" TextColor="Gray" Padding="120,20,0,0"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+
+            <Entry x:Name="fTypeEntry" MinimumWidthRequest="160"/>
+          
                 <!--add food button-->
                 <Button 
                     x:Name="addAmountOfFood" 
@@ -60,16 +66,17 @@
                     Clicked="OnRemoveFood"/>    
             </HorizontalStackLayout>
 
-            <Label Text="Weight" TextColor="Gray" Padding="0,20,0,0"/>
-            <Entry/>
+        <Label Text="Weight (kg)" TextColor="Gray" Padding="0,20,0,0"/>
+        <Entry x:Name="WeightEntry" Keyboard="Numeric"/>
 
+      
             <Label Text="Add image" TextColor="Gray" Padding="0,20,0,0"/>
             <Image
                 x:Name="Image_Upload"
                 HeightRequest="100"/>
             <!--upplode image button-->
             <Button
-                Text="Uplode Image"
+                Text="Upload Image"
                 BackgroundColor="White"
                 Clicked="UploadImage_Clicked"
                 TextColor="Black"
@@ -77,19 +84,21 @@
                 BorderColor="Black"
                 Margin="30"
             />
-            <Label Text="Coment" TextColor="Gray" Padding="0,20,0,0"/>
-            <Entry/>
-            
-             <!--save cat button-->
-            <Button 
-                x:Name="catadded" 
-                BackgroundColor="White"
-                Text="Save Cat"
-                TextColor="Black"
-                BorderWidth="1"
-                BorderColor="Black"
-                Margin="30"
-                Clicked="AddButton_Clicked"/>
-        </VerticalStackLayout>
+      
+              <Label Text="Comment" TextColor="Gray" Padding="0,20,0,0"/>
+        <Entry x:Name="CommentEntry"/>
+                    
+                <Button 
+            x:Name="catadded" 
+            BackgroundColor="White"
+            Text="Save Cat"
+            TextColor="Black"
+            BorderWidth="1"
+            BorderColor="Black"
+            Margin="30"
+            Clicked="AddButton_Clicked"/>
+
+    </VerticalStackLayout>
+
     </ScrollView>
 </ContentPage>

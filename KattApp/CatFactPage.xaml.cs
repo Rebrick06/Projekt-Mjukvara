@@ -2,7 +2,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
-using Newtonsoft.Json; // Lägg till Newtonsoft.Json via NuGet
+using Newtonsoft.Json; // LÃ¤gg till Newtonsoft.Json via NuGet
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -33,6 +33,7 @@ namespace KattApp
 
         private async Task<string> GetCatFact()
         {
+
             string url = "https://catfact.ninja/fact"; //api anrop
             try
             {
@@ -52,7 +53,7 @@ namespace KattApp
                 }
             }
             
-            catch (Exception ex) //något blir fel. 
+            catch (Exception ex) //nÃ¥got blir fel. 
             {
                 return "API Not Available"; 
             }

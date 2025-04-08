@@ -1,27 +1,25 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KattApp
+namespace KattApp.Mdoels
 {
-    internal class Cat
+    public class Cat
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
 
-        public string _name { get; set; }
-        public string _race { get; set; }
-        public int _bday { get; set; }
-        public int _weight { get; set; }
-        public string _coment { get; set; }
+        public string Name { get; set; }
 
-        public Cat(string name, string race, int bday, int weight, string coment)
-        {
-            _name = name;
-            _race = race;
-            _bday = bday;
-            _weight = weight;
-            _coment = coment;
-        }
+        public string Race { get; set; }
+
+        public string Birthday { get; set; }
+        public string Food_type { get; set; }
+       // public int Food_amount { get; set; }
+        public double Weight { get; set; }
+        public string Comment { get; set; }
     }
 }
