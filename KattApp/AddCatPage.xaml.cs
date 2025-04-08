@@ -15,20 +15,34 @@ public partial class AddCatPage : ContentPage
         uploadImage = new UpploadImage();
 	}
 
+    /// <summary>
+    /// knapp för att lägga till mer mat 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void OnAddFood(object sender, EventArgs e)
     {
         count++;
-        if (count <= 0) { count = 0; }
         AmountFood.Text = $"{count.ToString()}    g";
     }
 
+    /// <summary>
+    /// knapp för att tabort mat
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void OnRemoveFood(object sender, EventArgs e)
     {
         count--;
-        if (count <= 0) { count = 0; }
+        if (count <= 0) { count = 0; }//kan inte bli mindre än noll
         AmountFood.Text = $"{count.ToString()}    g";
     }
 
+    /// <summary>
+    /// lägger till en blid ifrån kamrarullen
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     public async void UploadImage_Clicked(object sender, EventArgs e)
     {
         var img = await uploadImage.OpenMediaPickerAsync();
