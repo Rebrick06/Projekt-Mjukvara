@@ -4,11 +4,12 @@
              x:Class="KattApp.MyCatPage"
              Title="My Cats">
     <VerticalStackLayout>
-            
         <CollectionView x:Name="catsCollectionView">
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
                         <VerticalStackLayout>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="18"/>
                             <Label Text="{Binding Race}" />
                             <Label Text="{Binding Weight, StringFormat='Vikt: {0} kg'}" />
                             <Label Text="{Binding Birthday, StringFormat='Född: {0:yyyy-MM-dd}'}" />

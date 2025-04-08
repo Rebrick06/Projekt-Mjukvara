@@ -28,7 +28,6 @@
              Margin="0,50,0,0"                
              x:Name="CatFactLabel"
              Text="TOMT? (KATTFAKTA)"
-             TextColor="Gray"
              TextColor="DarkSlateGray"
              FontSize="17"
              VerticalOptions="Center" 
