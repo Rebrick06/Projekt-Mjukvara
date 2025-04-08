@@ -4,6 +4,9 @@
              x:Class="KattApp.MyCatPage"
              Title="My Cats">
     <VerticalStackLayout>
+        <VerticalStackLayout x:Name="CatContainer" Padding="10">
+            
+        </VerticalStackLayout>
         <Button 
             x:Name="addcat" 
             BackgroundColor="White"
@@ -13,9 +16,6 @@
             BorderColor="Black"
             Margin="30"
             Clicked="OnNavigateButtonClicked"/>
-
-       
-        
     </VerticalStackLayout>
 
     

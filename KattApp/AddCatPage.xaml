@@ -5,24 +5,24 @@
              Title="Add Cat">
     <VerticalStackLayout Margin="15" Padding="30,10,30,30">
         <Label Text="Cat Name" TextColor="Gray"/>
-        <Entry />
+        <Entry x:Name="NameEntry" />
         <Label Text="Cat Race" TextColor="Gray" Padding="0,20,0,0"/>
-        <Entry />
+        <Entry x:Name="RaceEntry"/>
         <Label Text="Birthday" TextColor="Grey" Padding="0,20,0,0"/>
-        <Entry />
+        <Entry x:Name="bDayEntry"/>
         <HorizontalStackLayout>
             <Label Text="Food type" TextColor="Gray" Padding="0,20,0,0"/>
-            <Label Text="Amount" TextColor="Gray" Padding="120,20,0,0"/>
+            <Label Text="Amount (g)" TextColor="Gray" Padding="120,20,0,0"/>
         </HorizontalStackLayout>
         <HorizontalStackLayout>
-            <Entry/>
-            <Entry/>
+            <Entry x:Name="fTypeEntry"/>
+            <Entry x:Name="fAmountEntry" Keyboard="Numeric"/>
         </HorizontalStackLayout>
-        <Label Text="Weight" TextColor="Gray" Padding="0,20,0,0"/>
-        <Entry/>
+        <Label Text="Weight (kg)" TextColor="Gray" Padding="0,20,0,0"/>
+        <Entry x:Name="WeightEntry" Keyboard="Numeric"/>
         <Label Text="Add image" TextColor="Gray" Padding="0,20,0,0"/>
-        <Label Text="Coment" TextColor="Gray" Padding="0,20,0,0"/>
-        <Entry/>
+        <Label Text="Comment" TextColor="Gray" Padding="0,20,0,0"/>
+        <Entry x:Name="CommentEntry"/>
         <Button 
             x:Name="catadded" 
             BackgroundColor="White"

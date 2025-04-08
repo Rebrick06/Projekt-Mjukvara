@@ -33,25 +33,34 @@ namespace KattApp
 
         private async Task<string> GetCatFact()
         {
-            string url = "https://cat-fact.herokuapp.com/facts";
-
-            using (HttpClient client = new HttpClient())
+            try
             {
-                HttpResponseMessage resp = await client.GetAsync(url);
+                string url = "https://cat-fact.herokuapp.com/facts";
 
-                string jsonString = await resp.Content.ReadAsStringAsync();
-
-                List<CatFact> facts = JsonConvert.DeserializeObject<List<CatFact>>(jsonString);
-
-                if (facts.Count > 0)
+                using (HttpClient client = new HttpClient())
                 {
-                    DateTime today = DateTime.Today;
-                    int day = today.DayOfYear;
+                    HttpResponseMessage resp = await client.GetAsync(url);
 
-                    return facts[day % facts.Count].Text;
+                    string jsonString = await resp.Content.ReadAsStringAsync();
+
+                    List<CatFact> facts = JsonConvert.DeserializeObject<List<CatFact>>(jsonString);
+
+                    if (facts.Count > 0)
+                    {
+                        DateTime today = DateTime.Today;
+                        int day = today.DayOfYear;
+
+                        return facts[day % facts.Count].Text;
+                    }
                 }
             }
+            catch
+            {
+                CatFactLabel.Text = "ERROR";
+            }
             return "ERROR";
+            
+         
         }
     }
 }
